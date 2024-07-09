@@ -1,0 +1,45 @@
+program: train_model_llama.py
+method: grid
+metric:
+  name: train/loss
+  goal: minimize
+parameters:
+  seed:
+    distribution: categorical # have 20 runs
+    values: 
+      - 21
+      - 1
+      - 15
+      - 18
+      - 22
+      - 23
+      - 105
+      - 84
+      - 90
+      - 99
+      - 121
+      - 21
+      - 415
+      - 518
+      - 622
+      - 923
+      - 9105
+      - 284
+      - 80
+      - 939
+  weight_decay:
+    distribution: categorical
+    values: 
+        - 0.005
+  _name_or_path:
+    distribution: categorical
+    values:
+      - distilbert-base-uncased
+  learning_rate:
+    distribution: categorical
+    values:
+      - 1e-5
+  num_train_epochs:
+    distribution: categorical
+    values: 
+      - 3

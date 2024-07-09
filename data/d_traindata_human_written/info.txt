@@ -1,0 +1,2 @@
+This folder used to contain the cleaned datasetsin the training portion, but due to low disc space they were removed to DATA_PATH. 
+All file path variables in the code will still work.

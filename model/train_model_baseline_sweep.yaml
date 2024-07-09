@@ -1,0 +1,16 @@
+program: train_model_baseline.py
+method: bayes
+metric:
+  name: train/loss
+  goal: minimize
+parameters:
+  _name_or_path:
+    distribution: categorical
+    values:
+      - distilbert-base-uncased
+      - bert-base-uncased
+      - roberta-base-uncased
+  learning_rate:
+    distribution: uniform
+    min: 7e-7
+    max: 1e-1
